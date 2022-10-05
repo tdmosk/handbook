@@ -5,11 +5,29 @@ For basic operations like accessing an instance for these steps, see [managed in
 
 ## Prereq
 
+> Until https://github.com/sourcegraph/controller/pull/23 is merged, check out to the feature branch
+
 Follow https://github.com/sourcegraph/controller#installation to install `mi2`
 
 ```sh
 git clone https://github.com/sourcegraph/cloud
 cd cloud
+```
+
+Install `mi2` binary
+
+```sh
+go install ./cmd/mi2/
+```
+
+Install `tfgen` binary
+
+```sh
+npm install
+npm install -g cdktf-cli@0.12.3
+npm run get
+npm run build:prod
+mv ./dist/tfgen $GOBIN/tfgen
 ```
 
 ## Steps
@@ -38,7 +56,7 @@ export ENVIRONMENT=dev
 git checkout -b $SLUG/create-instance
 ```
 
-### Init deployment artifacts - GCP Project
+### Init deployment artifacts - terraform stacks
 
 `mi2 generate` will
 
@@ -49,7 +67,7 @@ git checkout -b $SLUG/create-instance
 mi2 generate -e $ENVIRONMENT --domain $DOMAIN --slug $SLUG
 ```
 
-Above command will fail on the first run, follow the prompt to manually apply the terraform module or you can just run the command below
+Above command will fail on the first run, run the command below to manually deploy the module
 
 Before applying the terraform modulel, gather the computed values and configure them as environment variables
 
@@ -61,25 +79,8 @@ export PROJECT_ID=$(mi2 instance get -e $ENVIRONMENT --slug $SLUG | jq -r '.stat
 Apply the `project` terraform module
 
 ```sh
-cd environments/$ENVIRONMENT/deployments/$INSTANCE_ID/terraform/project
-terraform init
-terraform apply
-```
-
-### Init deployment artifacts - Infrastructure
-
-Rerun the `generate` command to generate the infra terraform module.
-
-```sh
-mi2 generate -e $ENVIRONMENT --domain $DOMAIN --slug $SLUG
-```
-
-Above command will fail again, run the command below to manually apply the `infra` terraform module.
-
-```sh
-cd environments/$ENVIRONMENT/deployments/$INSTANCE_ID/terraform/infra
-terraform init
-terraform apply
+cd environments/$ENVIRONMENT/deployments/$INSTANCE_ID/
+cdktf deploy project network waf cluster app sql sql_schema output --auto-approve --parallelism 8
 ```
 
 ### Init deployment artifacts - K8S
