@@ -1774,10 +1774,10 @@ chokidar@3.5.1, "chokidar@>=3.0.0 <4.0.0":
   optionalDependencies:
     fsevents "~2.3.1"
 
-chrono-node@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/chrono-node/-/chrono-node-2.3.2.tgz#794f2ada1f75fe3da216501031812c0f3dd23c71"
-  integrity sha512-uZkVtF8dJ7llRzk3zrjGjV524I6NvojqMYk30tIfnUQ8ODrL8wvi/E2iEOTfcyiJaLf0dGDu9XVqNkVFNDMPCA==
+chrono-node@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/chrono-node/-/chrono-node-2.4.1.tgz#ba86142a543cc27c0c531f2acbc1c23e3358bafe"
+  integrity sha512-23lqpMF2i0lr6dAVpVyYmvVGgX/EtkHBEIgFUd6LQiP7CHLzYeROYvl5X59ZBK73KAV+FGPo4rQv0Fym8CIktw==
   dependencies:
     dayjs "^1.10.0"
 
