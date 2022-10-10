@@ -6095,10 +6095,10 @@ retext-latin@^3.0.0:
     unherit "^3.0.0"
     unified "^10.0.0"
 
-retext-smartypants@^5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/retext-smartypants/-/retext-smartypants-5.1.0.tgz#cd5c308710ade5161e642ee1f60bf6df1603d9dc"
-  integrity sha512-P+VS0YlE96T2MRAlFHaTUhPrq1Rls+1GCvIytBvbo7wcgmRxC9xHle0/whTYpRqWirV9WaUm5mXmh1dKnskGWQ==
+retext-smartypants@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/retext-smartypants/-/retext-smartypants-5.2.0.tgz#da9cb79cc60f36aa33a20a462dfc663bec0068b4"
+  integrity sha512-Do8oM+SsjrbzT2UNIKgheP0hgUQTDDQYyZaIY3kfq0pdFzoPk+ZClYJ+OERNXveog4xf1pZL4PfRxNoVL7a/jw==
   dependencies:
     "@types/nlcst" "^1.0.0"
     nlcst-to-string "^3.0.0"
