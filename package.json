@@ -134,6 +134,6 @@
   },
   "resolutions": {
     "unist-util-is": "5.1.1",
-    "unist-util-visit-parents": "5.1.0"
+    "unist-util-visit-parents": "5.1.1"
   }
 }
