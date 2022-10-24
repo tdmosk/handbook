@@ -16,7 +16,7 @@ Open Okta Verify and follow the instructions.
 
 ![Okta step 3](https://storage.googleapis.com/sourcegraph-assets/handbook/Okta-activation-steps/step2.png)
 
-6. Tap “Add Accoun”t.
+6. Tap “Add Account”.
 7. Choose the type of account to add. For Okta Verify, choose Organization.
    1. Organization: Add a multifactor authentication (MFA) account for your work, school, or business that uses Okta as an authentication provider.
 8. Tap “Scan a QR code” and point your camera at the QR code displayed in the browser on your computer.
